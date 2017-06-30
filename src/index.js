@@ -44,7 +44,7 @@ export function getEnv() {
  * Check in the which one app. You can input a array or string to valid. You also can extend this funciton in your all. For example: Tmall app. When the Tmall appName is 'Tmall' the you can make a wrapper like Env.isTmall().
  *
  * @memberOf Env
- * @function isClient
+ * @function isApp
  *
  * @example
  * <script>
@@ -54,8 +54,8 @@ export function getEnv() {
  *         const myAppNameArray = ['MY_APP_NAME', 'my_app_name']
  *         const myAppName = 'MY_APP_NAME'
  *
- *         Env.isClient(myAppNameArray)
- *         Env.isClient(myAppName)
+ *         Env.isApp(myAppNameArray)
+ *         Env.isApp(myAppName)
  *     }
  * }
  * </script>
@@ -63,7 +63,7 @@ export function getEnv() {
  * @param {Array|String} appName App name array. maybe your legacy app is different name
  * @return {Boolean}
  */
-export function isClient(nameList) {
+export function isApp(nameList) {
     nameList = isString(nameList) ? [nameList] : nameList
     nameList = isArray(nameList) ? nameList : []
 

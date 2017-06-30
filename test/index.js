@@ -14,12 +14,12 @@ describe(pkg.name, () => {
         testHelper.resetGlobalEnvironment()
     })
 
-    describe('isClient', () => {
+    describe('isApp', () => {
         it('should be support input string', () => {
             global.WXEnvironment = {
                 appName: 'MY_APP_A'
             }
-            expect(Env.isClient('MY_APP_A')).equal(true)
+            expect(Env.isApp('MY_APP_A')).equal(true)
         })
     })
 
