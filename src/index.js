@@ -16,10 +16,6 @@ function isString(obj) {
     return !!(typeof(obj) === 'string')
 }
 
-function isUndefined(obj) {
-    return !!(typeof(obj) === 'undefined')
-}
-
 /**
  * Get weex env
  *
@@ -41,7 +37,7 @@ function isUndefined(obj) {
  * @return {Object}
  */
 export function getEnv() {
-    return isUndefined(WXEnvironment) ? {} : WXEnvironment
+    return _typeof(WXEnvironment) === 'object' ? WXEnvironment : {}
 }
 
 /**
