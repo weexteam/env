@@ -9,11 +9,15 @@ function _typeof(obj) {
 }
 
 function isArray(obj) {
-    return _typeof(obj) === 'array' ? true : false
+    return !!(_typeof(obj) === 'array')
 }
 
 function isString(obj) {
-    return typeof(obj) === 'string' ? true : false
+    return !!(typeof(obj) === 'string')
+}
+
+function isUndefined(obj) {
+    return !!(typeof(obj) === 'undefined')
 }
 
 /**
@@ -37,7 +41,7 @@ function isString(obj) {
  * @return {Object}
  */
 export function getEnv() {
-    return WXEnvironment || {}
+    return isUndefined(WXEnvironment) ? {} : WXEnvironment
 }
 
 /**

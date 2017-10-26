@@ -14,6 +14,12 @@ describe(pkg.name, () => {
         testHelper.resetGlobalEnvironment()
     })
 
+    describe('WXEnvironment undefined', () => {
+        it('should be support WXEnvironment not define', () => {
+            expect(Env.isApp('MY_APP_A')).equal(false)
+        })
+    })
+
     describe('isApp', () => {
         it('should be support input string', () => {
             global.WXEnvironment = {
