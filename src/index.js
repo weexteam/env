@@ -37,7 +37,14 @@ function isString(obj) {
  * @return {Object}
  */
 export function getEnv() {
-    return _typeof(WXEnvironment) === 'object' ? WXEnvironment : {}
+    try {
+        return _typeof(WXEnvironment) === 'object' ? WXEnvironment : {}
+    }catch(e){
+        // For fit Rax environment.
+        return {
+            platform: 'Web'
+        }
+    }
 }
 
 /**
