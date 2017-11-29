@@ -15,11 +15,11 @@ function _typeof(obj) {
 }
 
 function isArray(obj) {
-    return _typeof(obj) === 'array' ? true : false
+    return !!(_typeof(obj) === 'array')
 }
 
 function isString(obj) {
-    return typeof(obj) === 'string' ? true : false
+    return !!(typeof(obj) === 'string')
 }
 
 /**
@@ -43,7 +43,14 @@ function isString(obj) {
  * @return {Object}
  */
 function getEnv() {
-    return WXEnvironment || {}
+    try {
+        return _typeof(WXEnvironment) === 'object' ? WXEnvironment : {}
+    }catch(e){
+        // For fit Rax environment.
+        return {
+            platform: 'Web'
+        }
+    }
 }
 
 /**
